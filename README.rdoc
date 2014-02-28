@@ -25,29 +25,29 @@ A *read-only* SNMP community is required for each device to be monitored. Curren
 SNMP version 2c is supported.
 
 
-== Installation and Running
+== Installation and Running Instructions
 
-1. Install this gem from RubyGems:
+1 - create an installation directory (i.e. /opt/newrelic_plugins/)
 
-      gem install newrelic_juniper_plugin
+2 - cd to /opt/newrelic_plugins/
 
-2. Create an installation directory (like /opt/newrelic/juniper ).
-3. In the installation directory, execute
+3 - run the following command to clone the project on your system:
+	git clone https://github.com/jthurman42/newrelic_juniper_plugin.git
 
-      juniper_monitor install -l LICENSE_KEY
+4 - change directory to newrelic_juniper_plugin
 
-   using the license key from your New Relic account.
-4. Edit the +config/newrelic_plugin.yml+ file generated in step 4.  Setup hostname/port/snmp_community for each device you wish to monitor.
-5. Execute
+5 - run the following command to install/update the dependencies:
+	bundle install
 
-      juniper_monitor run
+6 - edit config/newrelic_plugin.yml and make sure to specify proper values for the following properties:
+	- license_key 			# change YOUR_LICENSE_KEY_HERE with license key of your New Relic' asccount
+	- hostname				# juniper app to connect to
+	- port					# pstening ort number 
+	- snmp_community		# community key
+	- interface_indexes		# interface indexes  (ifindex)
 
-== Developer Instructions
 
-1. Fork/Clone the repository
-2. Install bundler and run:
+7 - run the plugin:
+	bundle exec ./bin/juniper_monitor run -c config/newrelic_plugin.yml
 
-      bundle install
-
-3. Run <b><tt>rake -T</tt></b> to see rake options, including tests.
-
+----------------------------------------------------------------------------------
