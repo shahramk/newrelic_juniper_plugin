@@ -32,22 +32,22 @@ SNMP version 2c is supported.
 2 - cd to /opt/newrelic_plugins/
 
 3 - run the following command to clone the project on your system:
-	git clone https://github.com/jthurman42/newrelic_juniper_plugin.git
+	* git clone https://github.com/jthurman42/newrelic_juniper_plugin.git
 
 4 - change directory to newrelic_juniper_plugin
 
 5 - run the following command to install/update the dependencies:
-	bundle install
+	* bundle install
 
 6 - edit config/newrelic_plugin.yml and make sure to specify proper values for the following properties:
-	- license_key 			# change YOUR_LICENSE_KEY_HERE with license key of your New Relic' asccount
-	- hostname				# juniper app to connect to
-	- port					# pstening ort number 
-	- snmp_community		# community key
-	- interface_indexes		# interface indexes  (ifindex)
+	* license_key 			# change YOUR_LICENSE_KEY_HERE with license key of your New Relic' asccount
+	* hostname				# juniper app to connect to
+	* port					# pstening ort number 
+	* snmp_community		# community key
+	* interface_indexes		# interface indexes  (ifindex)
 
 
 7 - run the plugin:
-	bundle exec ./bin/juniper_monitor run -c config/newrelic_plugin.yml
+	* bundle exec ./bin/juniper_monitor run -c config/newrelic_plugin.yml
 
 ----------------------------------------------------------------------------------
